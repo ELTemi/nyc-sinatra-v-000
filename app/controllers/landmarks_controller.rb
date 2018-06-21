@@ -11,6 +11,7 @@ class LandmarksController < ApplicationController
 
   post '/figures' do
     @landmark = Landmark.create(params[:landmark])
+    binding.pry
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params["genres"]
     @song.save
