@@ -30,6 +30,6 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find_by_id(params[:id])
     @landmark.update(params[:landmark])
     @figure.save
-    redirect("/figures/#{@figure.id}")
+    redirect("/landmarks/#{@landmark.id}")
   end
 end
