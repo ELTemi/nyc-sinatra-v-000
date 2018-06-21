@@ -5,6 +5,7 @@ class LandmarksController < ApplicationController
   end
 
   get '/landmarks/new' do
+    binding.pry
     erb :'/landmarks/new'
   end
 
