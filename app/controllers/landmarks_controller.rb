@@ -14,4 +14,11 @@ class LandmarksController < ApplicationController
     @landmark.update
     redirect "/landmarks/#{@landmark.id}"
   end
+
+  get '/landmarks/:id' do
+    @landmark = Landmark.find(params[:id])
+    @figure.landmarks
+    @figure.titles
+    erb :'/figures/show'
+  end
 end
