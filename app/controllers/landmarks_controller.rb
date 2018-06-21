@@ -10,8 +10,9 @@ class LandmarksController < ApplicationController
   end
 
   post '/landmarks' do
-    @landmark = Landmark.create(params[:landmark])
     binding.pry
+
+    @landmark = Landmark.create(params[:landmark])
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params["genres"]
     @song.save
