@@ -10,7 +10,7 @@ class LandmarksController < ApplicationController
   end
 
   post '/figures' do
-    @landmark = Landmark.create(name: params[:Name])
+    @landmark = Landmark.create(name: params[:name])
     @song.artist = Artist.find_or_create_by(name: params["Artist Name"])
     @song.genre_ids = params["genres"]
     @song.save
