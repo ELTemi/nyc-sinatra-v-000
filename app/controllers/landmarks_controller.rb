@@ -19,4 +19,19 @@ class LandmarksController < ApplicationController
     @landmark = Landmark.find(params[:id])
     erb :'/landmarks/show'
   end
+
+  get '/landmarks/:id/edit' do
+    @landmark = Landmark.find(params[:id])
+    @landmarks = Landmark.all
+    erb :'/figures/edit'
+  end
+
+  patch '/figures/:id' do
+    @figure = Figure.find_by_id(params[:id])
+    @figure.update(params[:figure])
+    @figure.landmarks << Landmark.create(name: params["landmark"]["year"])
+    @figure.titles << Title.create(name: params["figure"]["name"])
+    @figure.save
+    redirect("/figures/#{@figure.id}")
+  end
 end
