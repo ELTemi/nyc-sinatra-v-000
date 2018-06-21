@@ -1,7 +1,7 @@
 class LandmarksController < ApplicationController
   get '/landmarks' do
     @landmarks = Landmark.all
-    @landmarks
+    binding.pry
     erb :'/landmarks/index'
   end
 
